@@ -61,6 +61,8 @@ jobs:
 
   docker-build:
     <<: *defaults
+    machine:
+      docker_layer_caching: true
     steps:
       - checkout
       - setup_remote_docker
