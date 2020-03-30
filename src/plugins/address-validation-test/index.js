@@ -12,12 +12,12 @@ export default async function register(app) {
     version: app.context.appVersion,
     addressValidationServices: [
       {
-        displayName: "Test Validation",
+        displayName: "Address Validation",
         functions: {
           addressValidation
         },
         name: "test",
-        supportedCountryCodes: ["US", "CA"]
+        supportedCountryCodes: ["US", "CA", "IN"]
       }
     ]
   });

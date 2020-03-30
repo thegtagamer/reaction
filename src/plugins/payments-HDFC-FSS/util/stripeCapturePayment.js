@@ -14,7 +14,6 @@ import unformatFromStripe from "./unformatFromStripe.js";
  * @private
  */
 export default async function stripeCapturePayment(context, paymentMethod) {
-  console.log('paymentMethod stripe --->', paymentMethod );
   const captureDetails = {
     amount: formatForStripe(paymentMethod.amount)
   };

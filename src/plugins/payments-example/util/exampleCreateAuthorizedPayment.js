@@ -16,6 +16,7 @@ const PROCESSOR = "Example";
  * @returns {Object} The payment object in schema expected by the orders plugin
  */
 export default async function exampleCreateAuthorizedPayment(context, input) {
+  console.log('--------- Payment Data-------', input);
   const {
     amount,
     billingAddress,

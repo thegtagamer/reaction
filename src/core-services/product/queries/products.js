@@ -1,4 +1,5 @@
 import applyProductFilters from "../utils/applyProductFilters.js";
+import Logger from "@reactioncommerce/logger";
 
 /**
  * @name products
@@ -20,12 +21,16 @@ import applyProductFilters from "../utils/applyProductFilters.js";
  * @returns {Promise<Object>} Products object Promise
  */
 export default async function products(context, input) {
+  console.log("products called", context, input);
   const { collections } = context;
   const { Products } = collections;
   const productFilters = input;
 
+Logger.info("starting to log products");
+
   // Check the permissions for all shops requested
   await Promise.all(productFilters.shopIds.map(async (shopId) => {
+    Logger.info("starting to log products",shopId);
     await context.validatePermissions("reaction:legacy:products", "read", { shopId });
   }));
 

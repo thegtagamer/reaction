@@ -13,7 +13,9 @@ networks:
 
 services:
   api:
-    image: reactioncommerce/reaction:3.3.0
+    # image: reactioncommerce/reaction:3.3.0
+    # image: rc-api:latest
+    image: rc-api2:latest
     depends_on:
       - mongo
     env_file:

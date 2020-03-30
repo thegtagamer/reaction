@@ -1,0 +1,15 @@
+"Data for a Stripe card payment"
+type HDFCFSSCardPaymentData {
+  "The HDFC charge ID"
+  chargeId: String!
+
+  "The HDFC customer ID, if a HDFC customer exists for this charge"
+  customerId: String
+}
+
+extend union PaymentData = HDFCFSSCardPaymentData
+
+extend enum PaymentMethodName {
+  "HDFC Card payment method"
+  HDFC_card
+}

@@ -7,6 +7,8 @@
 export default function startup(context) {
   const { appEvents, collections: { Discounts } } = context;
 
+console.log('------------------', appEvents, Discounts );
+
   appEvents.on("afterOrderCreate", async ({ order }) => {
     if (Array.isArray(order.discounts)) {
       await Promise.all(order.discounts.map(async (orderDiscount) => {

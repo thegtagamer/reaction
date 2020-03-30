@@ -10,6 +10,7 @@
  * @returns {Promise<Object>} Product object Promise
  */
 export default async function product(context, input) {
+  console.log("context, input", content, input);
   const { collections } = context;
   const { Products } = collections;
   const { productId, shopId } = input;
